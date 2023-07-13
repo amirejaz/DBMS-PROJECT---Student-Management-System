@@ -255,10 +255,11 @@ class Students:
         con = pymysql.connect(host="localhost", user="root", password="", database="stm")
         cur = con.cursor()
 
-        cur.execute("UPDATE students SET Name=%s, Age=%s, Gender=%s, Contact_No=%s, Courses=%s, Address=%s WHERE roll_no=%s",
+        cur.execute("UPDATE students SET name=%s, age=%s, gender=%s, contact=%s, course=%s, address=%s WHERE roll_no=%s",
                     (self.Name_var.get(), self.Age_var.get(), self.Gender_var.get(), self.Contact_No_var.get(),
                      ", ".join(self.selected_courses), self.txt_Address.get('1.0', END), self.Roll_No_var.get()))
         con.commit()
+        messagebox.showinfo("Success", "Record has been updated")
         con.close()
         self.fetch_data()
         self.clear()
