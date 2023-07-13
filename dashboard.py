@@ -9,6 +9,7 @@ from Student import Students
 from Result import Results
 from resultview import ResultView
 import pymysql
+import time
 
 class STMS:
     def __init__(self, root):
@@ -91,7 +92,7 @@ class STMS:
         # Sec line image 
         draw.line((origin, 200+100*sin(radians(sec_)), 200-100*cos(radians(sec_))),fill="floralwhite",width=3)
         draw.ellipse((195,195,210,210),fill="gray")
-        clock.save("clock_new.png")    
+        clock.save("images/clock_new.png")    
 
     def clock_working(self):
         h=datetime.now().time().hour
